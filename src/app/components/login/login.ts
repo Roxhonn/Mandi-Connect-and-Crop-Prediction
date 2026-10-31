@@ -17,28 +17,28 @@ import { AuthService } from '../../services/auth.service';
             <i class="fa-solid fa-wheat-awn"></i>
           </div>
           <div class="brand-titles">
-            <h1 class="brand-app-name">🌾 AgriProcure <span class="ai-pill">AI</span></h1>
-            <p class="brand-tagline">Government Procurement Intelligence Platform</p>
+            <h1 class="brand-app-name">🌾 MandiConnect <span class="ai-pill">AI</span></h1>
+            <p class="brand-tagline">Crop Price Prediction & Mandi Connect Platform</p>
           </div>
         </div>
 
         <div class="sih-details-card">
-          <div class="sih-badge">
-            <i class="fa-solid fa-trophy text-gold"></i>
-            <span>Smart India Hackathon 2026</span>
+          <div class>
+
+            <span></span>
           </div>
-          <h3>Farmer Procurement Scheduling & Status Intelligence</h3>
-          <p class="problem-code">Problem Statement: <strong>SIH26032</strong></p>
-          <p class="ministry-name">Ministry of Consumer Affairs, Food & Public Distribution</p>
+          <h3>Crop Price Prediction, Mandi Scheduling & Farmer Status Intelligence</h3>
+          <p class="problem-code">College Final Project • <strong>BY FEEL THE DIFFERENCE</strong></p>
+          <p class="ministry-name">Prototype built with Angular and Spring Boot architecture</p>
         </div>
 
         <div class="demo-environment-tag">
           <span class="pulse-dot">●</span>
-          <span>DEMO ENVIRONMENT • SIMULATED PROCUREMENT DATA</span>
+          <span>DEMO BY • BY TAPAS,CHANDAN,ROSHON,OM</span>
         </div>
 
         <div class="left-footer-text">
-          Master Administrative Control Interface for Mandi Queues & MSP Disbursals
+          Decision-support platform for crop prices, mandi queues and farmer arrivals
         </div>
       </div>
 
@@ -50,7 +50,7 @@ import { AuthService } from '../../services/auth.service';
               <i class="fa-solid fa-user-shield"></i> Government Administrator
             </span>
             <h2>Sign in to Government Portal</h2>
-            <p class="login-sub">Enter your authorized government officer credentials to access the master portal.</p>
+<!--            <p class="login-sub">Enter your authorized government officer credentials to access the master portal.</p>-->
           </div>
 
           <!-- Error Alert Banner -->
@@ -65,12 +65,12 @@ import { AuthService } from '../../services/auth.service';
               <label for="usernameInput">Email / Government ID</label>
               <div class="input-wrapper">
                 <i class="fa-solid fa-id-card input-icon"></i>
-                <input 
+                <input
                   id="usernameInput"
-                  type="text" 
-                  [(ngModel)]="username" 
-                  name="username" 
-                  required 
+                  type="text"
+                  [(ngModel)]="username"
+                  name="username"
+                  required
                   placeholder="e.g. govadmin"
                   [disabled]="isLoading"
                 />
@@ -81,18 +81,18 @@ import { AuthService } from '../../services/auth.service';
               <label for="passwordInput">Password</label>
               <div class="input-wrapper">
                 <i class="fa-solid fa-lock input-icon"></i>
-                <input 
+                <input
                   id="passwordInput"
-                  [type]="showPassword ? 'text' : 'password'" 
-                  [(ngModel)]="password" 
-                  name="password" 
-                  required 
+                  [type]="showPassword ? 'text' : 'password'"
+                  [(ngModel)]="password"
+                  name="password"
+                  required
                   placeholder="Enter password"
                   [disabled]="isLoading"
                 />
-                <button 
-                  type="button" 
-                  class="toggle-pwd-btn" 
+                <button
+                  type="button"
+                  class="toggle-pwd-btn"
                   (click)="showPassword = !showPassword"
                   title="Toggle Password Visibility"
                 >
@@ -124,27 +124,26 @@ import { AuthService } from '../../services/auth.service';
           <div class="demo-credentials-card">
             <div class="demo-cred-head">
               <i class="fa-solid fa-key text-gold"></i>
-              <strong>Demo Credentials for SIH Demonstration:</strong>
+              <strong>Demo Credentials</strong>
             </div>
             <div class="cred-rows">
               <div class="cred-row">
                 <span class="lbl">Government ID:</span>
                 <code>govadmin</code>
-                <button type="button" class="copy-btn" (click)="fillDemoCredentials()">Use Demo Account</button>
+<!--                <button type="button" class="copy-btn" (click)="fillDemoCredentials()"></button>-->
               </div>
               <div class="cred-row">
                 <span class="lbl">Password:</span>
-                <code>Agri@2026</code>
+                <code>Agri&#64;2026</code>
               </div>
             </div>
-            <p class="cred-sub font-semibold mt-1">Demo credentials available for SIH prototype demonstration.</p>
           </div>
 
           <!-- Disclaimer Footnote -->
-          <div class="proto-disclaimer">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Prototype Authentication — Production SSO / Government OAuth2 & JWT integration will be added later.</span>
-          </div>
+<!--          <div class="proto-disclaimer">-->
+<!--            <i class="fa-solid fa-shield-halved"></i>-->
+
+<!--          </div>-->
 
         </div>
       </div>
@@ -544,7 +543,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
-    
+
     if (this.authService.isLoggedIn()) {
       this.router.navigateByUrl(this.returnUrl);
     }
@@ -561,7 +560,7 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     this.errorMessage = '';
-    
+
     if (!this.username || !this.password) {
       this.errorMessage = 'Please enter both Government ID and Password.';
       return;

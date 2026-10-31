@@ -154,7 +154,7 @@ import { Farmer, ProcurementCentre } from '../../models/procurement.model';
               <i class="fa-solid fa-wheat-awn"></i>
             </div>
             <div>
-              <h3>AgriProcure AI • Digital Gate Pass</h3>
+              <h3>MandiConnect AI • Digital Mandi Pass</h3>
               <p>Ministry of Consumer Affairs, Food & Public Distribution</p>
             </div>
           </div>

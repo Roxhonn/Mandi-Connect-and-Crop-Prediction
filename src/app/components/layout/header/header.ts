@@ -22,28 +22,23 @@ import { AppNotification, AdminUser } from '../../../models/procurement.model';
         <div class="page-meta">
           <h2 class="current-title">{{ pageMeta.title }}</h2>
           <div class="breadcrumb">
-            <span class="home-crumb">AgriProcure AI</span>
+            <span class="home-crumb">MandiConnect AI</span>
             <i class="fa-solid fa-chevron-right crumb-sep"></i>
             <span class="active-crumb">{{ pageMeta.breadcrumb }}</span>
           </div>
         </div>
       </div>
 
-      <!-- Demo Mode Banner Indicator -->
-      <div class="demo-mode-indicator">
-        <span class="demo-dot">●</span>
-        <span class="demo-text">DEMO MODE — SIMULATED PROCUREMENT DATA</span>
-      </div>
 
       <!-- Right: Search, Date/Time, Notifs & Admin Profile -->
       <div class="header-actions">
         <!-- Global Search Input -->
         <div class="header-search">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input 
-            type="text" 
-            placeholder="Search Farmer ID, Mandi, Token..." 
-            [(ngModel)]="searchQuery" 
+          <input
+            type="text"
+            placeholder="Search Farmer ID, Mandi, Token..."
+            [(ngModel)]="searchQuery"
           />
         </div>
 
@@ -73,21 +68,21 @@ import { AppNotification, AdminUser } from '../../../models/procurement.model';
             </div>
 
             <div class="notif-body">
-              <div 
-                *ngFor="let notif of notifications" 
-                class="notif-item" 
+              <div
+                *ngFor="let notif of notifications"
+                class="notif-item"
                 [class.unread]="!notif.read"
                 (click)="onNotificationClick(notif)"
               >
-                <div 
-                  class="notif-icon-box" 
+                <div
+                  class="notif-icon-box"
                   [class.icon-critical]="notif.severity === 'CRITICAL'"
                   [class.icon-warning]="notif.severity === 'WARNING'"
                   [class.icon-success]="notif.severity === 'SUCCESS'"
                   [class.icon-info]="notif.severity === 'INFO'"
                 >
-                  <i 
-                    class="fa-solid" 
+                  <i
+                    class="fa-solid"
                     [class.fa-triangle-exclamation]="notif.severity === 'CRITICAL'"
                     [class.fa-circle-exclamation]="notif.severity === 'WARNING'"
                     [class.fa-circle-check]="notif.severity === 'SUCCESS'"
@@ -116,10 +111,10 @@ import { AppNotification, AdminUser } from '../../../models/procurement.model';
         <div class="admin-profile-wrapper">
           <div class="admin-profile" (click)="toggleProfileDropdown()">
             <div class="profile-avatar">
-              <span>{{ currentAdmin?.avatarText || 'RK' }}</span>
+              <span>{{ currentAdmin?.avatarText || 'GU' }}</span>
             </div>
             <div class="profile-details">
-              <span class="admin-name">{{ currentAdmin?.name || 'Shri R.K. Sharma' }}</span>
+              <span class="admin-name">{{ currentAdmin?.name || 'GUEST USER' }}</span>
               <span class="admin-role-tag">GOV-ADMIN</span>
             </div>
             <i class="fa-solid fa-chevron-down profile-arrow"></i>
@@ -669,10 +664,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   updateClock() {
     const now = new Date();
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'short', 
-      day: '2-digit', 
-      month: 'short', 
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short',
       year: 'numeric',
       hour: '2-digit',
       minute: '2-digit',

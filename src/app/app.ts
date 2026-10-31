@@ -40,7 +40,7 @@ import { AuthService } from './services/auth.service';
   `]
 })
 export class AppComponent implements OnInit {
-  title = 'AgriProcure AI Admin Portal';
+  title = 'MandiConnect AI';
   isLoggedIn: boolean = false;
 
   constructor(private authService: AuthService) {}

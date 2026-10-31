@@ -42,16 +42,16 @@ export class LayoutService {
       breadcrumb: 'Live Mandi Gate Entry & Token Monitor'
     },
     '/procurement': {
-      title: 'Procurement Tracking',
-      breadcrumb: 'Moisture Testing & Tonnage Records'
+      title: 'Crop Arrivals & Quality',
+      breadcrumb: 'Mandi Weighment, Moisture Testing & Quality Records'
     },
     '/payments': {
       title: 'Payments & DBT',
       breadcrumb: 'Direct Benefit Transfer & PFMS Payouts'
     },
     '/ai-intelligence': {
-      title: 'AI Intelligence',
-      breadcrumb: 'Congestion Rerouting & Predictive Load Balancing'
+      title: 'Price & Mandi Intelligence',
+      breadcrumb: 'Crop Price Forecasting, Congestion & Demand Signals'
     },
     '/reports': {
       title: 'Reports & Analytics',
@@ -73,8 +73,8 @@ export class LayoutService {
       .subscribe((event: any) => {
         const url = event.urlAfterRedirects || event.url;
         const meta = this.routeMetaMap[url] || {
-          title: 'AgriProcure AI',
-          breadcrumb: 'Government Procurement Portal'
+          title: 'MandiConnect AI',
+          breadcrumb: 'Crop Price Prediction & Mandi Connect Platform'
         };
         this.pageMetaSubject.next(meta);
         this.mobileOpenSubject.next(false);
